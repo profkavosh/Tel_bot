@@ -22,13 +22,14 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Install Railway CLI
+      - name: Install Railway CLI manually
         run: |
-          curl -fsSL https://railway.app/install.sh | sh
-          export PATH="$HOME/.railway/bin:$PATH"
+          curl -L https://github.com/railwayapp/cli/releases/latest/download/railway-linux-amd64 -o railway
+          chmod +x railway
+          sudo mv railway /usr/local/bin/railway
 
       - name: Deploy to Railway
         env:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
         run: |
-          $HOME/.railway/bin/railway up
+          railway up
