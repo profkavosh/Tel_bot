@@ -31,4 +31,4 @@ jobs:
         env:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
         run: |
-          $HOME/.railway/bin/railway upname: Deploy to Railway
+          $HOME/.railway/bin/railway up
