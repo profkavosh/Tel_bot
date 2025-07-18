@@ -1,4 +1,3 @@
-git add requirements.txt
-git commit -m "Add requirements.txt"
-git pushpyTelegramBotAPI==4.15.4
-requests
+echo "python-telegram-bot==20.6" > requirements.txt
+echo "aiohttp" >> requirements.txt
+echo "python-dotenv" >> requirements.txt
