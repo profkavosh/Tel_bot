@@ -1,2 +1,4 @@
-pyTelegramBotAPI==4.15.4
+git add requirements.txt
+git commit -m "Add requirements.txt"
+git pushpyTelegramBotAPI==4.15.4
 requests
