@@ -4,27 +4,32 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
-      - name: Setup Python
-        uses: actions/setup-python@v2
+      - name: Set up Python
+        uses: actions/setup-python@v4
         with:
-          python-version: 3.x
+          python-version: '3.11'
 
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Deploy to Railway
+      - name: Install Railway CLI
         run: |
-          curl -sSL https://railway.app/api/v1/cli/install.sh | sh
-          railway login --token ${{ secrets.RAILWAY_TOKEN }}
-          railway link
-          railway up
+          curl -sSL https://railway.app/install.sh -o install.sh
+          bash install.sh
+
+      - name: Deploy to Railway
+        run: railway up
+        env:
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
