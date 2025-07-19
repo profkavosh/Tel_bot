@@ -1,0 +1,9 @@
+{
+  "name": "Telegram Bot on Railway",
+  "plugins": [
+    {
+      "name": "Python",
+      "source": "railway/python"
+    }
+  ]
+}
