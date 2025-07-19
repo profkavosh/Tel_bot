@@ -1,0 +1,11 @@
+# Tel_bot
+
+ربات هوشمند ثبت آگهی در تلگرام با یک کلیک 🚀
+
+## Deploy روی Railway با یک کلیک
+
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/REPLACE_WITH_TEMPLATE_ID)
+
+### بعد از کلیک:
+- Railway ازت `BOT_TOKEN` و `TARGET_GROUP_ID` می‌خواد
+- اتوماتیک پروژه بالا میاد و ربات آنلاین می‌شه
